@@ -5,3 +5,34 @@ body {
   font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
     sans-serif;
 }
+
+.app-description {
+  @apply text-sm text-slate-300 p-2;
+}
+
+.app-description p {
+  @apply mb-2;
+}
+
+.app-description a {
+  @apply text-blue-500 hover:text-blue-600;
+}
+
+@layer components {
+  .app-description {
+    font-size: --tw-text-sm;
+    color: --tw-text-slate-300;
+    padding: --tw-p-2;
+  }
+
+  .app-description p {
+    margin-bottom: --tw-mb-2;
+  }
+
+  .app-description a {
+    color: --tw-text-blue-500;
+    &:hover {
+      color: --tw-text-blue-600;
+    }
+  }
+}
