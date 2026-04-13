@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import bigBotBashImage from '../assets/bigbotbash2026.jpg'
 
-type ImageSize = { width: number; height: number }
+// type ImageSize = { width: number; height: number }
 
 function loadImage(src: string): Promise<HTMLImageElement> {
   return new Promise((resolve, reject) => {
@@ -16,7 +16,7 @@ export function BotBashCanvas() {
   const canvasRef = useRef<HTMLCanvasElement>(null)
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
-  const [imageSize, setImageSize] = useState<ImageSize | null>(null)
+  // const [imageSize, setImageSize] = useState<ImageSize | null>(null)
 
   useEffect(() => {
     let isMounted = true
@@ -46,7 +46,7 @@ export function BotBashCanvas() {
         canvas.height = height
         context.clearRect(0, 0, width, height)
         context.drawImage(image, 0, 0)
-        setImageSize({ width, height })
+        // setImageSize({ width, height })
       } catch (err) {
         if (!isMounted) {
           return
