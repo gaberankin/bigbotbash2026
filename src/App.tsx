@@ -40,6 +40,25 @@ function App() {
     },
     [],
   );
+  const randomizeAll = useCallback(() => {
+    // create a new object to avoid mutating the state directly
+    const newSelectedItems = { ...selectedItems };
+    for (const region of regions) {
+      if (region.selectable.length === 0) {
+        continue;
+      }
+      let randomItemId: SelectableID | null = null;
+      // loop to prevent selecting the same item twice
+      do {
+        const randomIndex = Math.floor(
+          Math.random() * region.selectable.length,
+        );
+        randomItemId = region.selectable[randomIndex].id;
+      } while (randomItemId === selectedItems[region.title]);
+      newSelectedItems[region.title] = randomItemId;
+    }
+    setSelectedItems(newSelectedItems);
+  }, [regions, selectedItems]);
   return (
     <main className="min-h-screen flex bg-slate-950 text-slate-100">
       <div className="w-[150px] md:w-[150px] lg:w-[20%] flex-none relative">
@@ -103,6 +122,14 @@ function App() {
                 </div>
               );
             })}
+            <div className="mt-2 text-right">
+              <button
+                className="text-xs text-slate-400 border border-slate-700 rounded-md p-2"
+                onClick={randomizeAll}
+              >
+                Randomize All
+              </button>
+            </div>
           </div>
           <div className="app-description">
             <p>
@@ -122,7 +149,7 @@ function App() {
             </p>
             <p>
               To the right is the robot generator that Bill originally posted on{" "}
-              <a href="https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://www.instagram.com/billmakingstuff/&ved=2ahUKEwi2lbSIzeuTAxVhm4kEHUG-FYwQFnoECA4QAQ&usg=AOvVaw0LMy_jb5dLJKJCzcFR2xF_">
+              <a href="https://www.instagram.com/billmakingstuff/p/DUnPyzxiE3v/">
                 his instagram
               </a>
               , and I'm going to add a few features to it.
@@ -133,15 +160,7 @@ function App() {
               but 2 sections done).
             </p>
             <p>
-              Second, I want to add a randomizer that will "auto select" random
-              parts. Currently, I have randomize implemented for each individual
-              region, but I want to add a global randomizer that will select a
-              random item for each region with one click.
-            </p>
-            <p>
-              Can I just mention that the auto-complete that cursor tries to
-              supply when you're typing is the absolute worst? It keeps getting
-              in my way.
+              Anyone have a good favicon i can use?
             </p>
           </div>
         </div>
