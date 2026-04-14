@@ -160,8 +160,12 @@ function App() {
               but 2 sections done).
             </p>
             <p>
-              Anyone have a good favicon i can use?
+              Second, I've added a randomizer. You can click the "Randomize All"
+              button to select a random item for each region. You can also click
+              the "Randomize" button on each region to select a random item for
+              that specific region.
             </p>
+            <p>Anyone have a good favicon i can use?</p>
           </div>
         </div>
       </div>
