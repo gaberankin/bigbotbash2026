@@ -1,5 +1,6 @@
 import { useMemo, useState, useCallback } from "react";
 import { BotBashCanvas } from "./components/Canvas";
+import { Description } from "./components/Description";
 import type { Region, SelectionByRegion, SelectableID } from "./types";
 import armRegion from "./regions/arms.json";
 import bodyRegion from "./regions/body.json";
@@ -132,40 +133,7 @@ function App() {
             </div>
           </div>
           <div className="app-description">
-            <p>
-              The big bot bash is a thing that{" "}
-              <a
-                href="https://www.youtube.com/c/BillMakingStuff"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                BillMakingStuff
-              </a>{" "}
-              has organized for the past few years. This year, I want to do a
-              thing, but because I'm a modern-day programmer who is struggling
-              to be excited about programming I thought I'd try to make
-              something that is (1) completely unnecessary and (2) does a thing
-              related to something that I am already interested in.
-            </p>
-            <p>
-              To the right is the robot generator that Bill originally posted on{" "}
-              <a href="https://www.instagram.com/billmakingstuff/p/DUnPyzxiE3v/">
-                his instagram
-              </a>
-              , and I'm going to add a few features to it.
-            </p>
-            <p>
-              First off, i'm going to make it clickable by identifying the
-              different selectable options on each bot "part" (I've gotten all
-              but 2 sections done).
-            </p>
-            <p>
-              Second, I've added a randomizer. You can click the "Randomize All"
-              button to select a random item for each region. You can also click
-              the "Randomize" button on each region to select a random item for
-              that specific region.
-            </p>
-            <p>Anyone have a good favicon i can use?</p>
+            <Description />
           </div>
         </div>
       </div>
