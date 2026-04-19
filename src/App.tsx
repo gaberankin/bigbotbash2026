@@ -62,7 +62,7 @@ function App() {
   }, [regions, selectedItems]);
   return (
     <main className="min-h-screen flex bg-slate-950 text-slate-100">
-      <div className="w-[150px] md:w-[150px] lg:w-[20%] flex-none relative">
+      <div className="grow relative 2xl:w-[400px] 2xl:flex-none">
         <div className="sticky top-0">
           <div className="space-y-2 p-2">
             {regions.map((region) => {
@@ -137,7 +137,7 @@ function App() {
           </div>
         </div>
       </div>
-      <div className="grow">
+      <div className="w-[1083px] flex-none 2xl:grow 2xl:w-auto">
         <BotBashCanvas
           regions={regions}
           selectedItems={selectedItems}

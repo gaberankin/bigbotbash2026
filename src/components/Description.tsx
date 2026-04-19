@@ -1,3 +1,6 @@
+import githubIconImage from "../assets/github-icon.svg";
+
+
 export function Description() {
   return <>
     <p>
@@ -37,5 +40,11 @@ export function Description() {
       that specific region.
     </p>
     <p>Anyone have a good favicon i can use?</p>
+    <p>
+      <a href="https://github.com/gaberankin/bigbotbash2026" className="flex items-center" target="_blank">
+        <img src={githubIconImage} alt="GitHub Icon" className="w-4 h-4 inline align-middle mr-2" />
+        Check out the code on GitHub!
+      </a>
+    </p>
   </>;
 }
